@@ -1,72 +1,92 @@
-class Node:
+class Node(object):
     def __init__(self, data=None):
         self.data = data
         self.next = None
 
-class LinkedList:
-    def __init__(self):
-        self.head = Node()
+    def get_data(self):
+        return self.data
 
-    def append(self, data):
+    def set_data(self, data):
+        self.data = data
+
+    def get_next(self):
+        return self.next
+
+    def set_next(self, next):
+        self.next = next
+
+
+class LinkedList(object):
+    def __init__(self, head=None):
+        self.head = Node()
+        self.count = 0
+
+    def get_count(self):
+        return self.count
+
+    def insert(self, data):
+        # TODO: Insert a new node
         new_node = Node(data)
         cur = self.head
         while cur.next != None:
             cur = cur.next
         cur.next = new_node
-
-    def length(self):
-        cur = self.head
-        total = 0
-        while cur.next != None:
-            total += 1
-            cur = cur.next
-        return total
+        self.count += 1
 
     def display(self):
+        # TODO: Shows the elements in the list
         elems = []
         cur_node = self.head
         while cur_node.next != None:
             cur_node = cur_node.next
             elems.append(cur_node.data)
+            print(cur_node)                   # Showing the data address for each elements
         print(elems)
 
-    def get(self, index):
-        if index >= self.length():
-            print ("Error: 'Get' index out of range.")
-            return None
-        cur_idx = 0
-        cur_node = self.head
-        while True:
-            cur_node = cur_node.next
-            if cur_idx == index:
-                return cur_node.data
-            cur_idx += 1
+    def find(self, data):
+        # TODO: Find the first-item with a given value
+        item = self.head
+        while item != None:
+            if item.get_data() == data:
+                return item
+            else:
+                item = item.get_next()
 
     def erase(self, index):
-        if index >= self.length():
-            print("Error: 'Erase' index out of range.")
-            return 
+        # TODO: Delete an item at given index
+        if index > self.count:
+            print("ERROR: 'Erase' index out of range.")
+            return
         cur_idx = 0
         cur_node = self.head
         while True:
-            last_node = cur_node
+            print(cur_node, cur_idx)             # Current node, index of each iteration
+            prev_node = cur_node
             cur_node = cur_node.next
-            if cur_idx == index:
-                last_node.next = cur_node.next
-                return
+            if cur_idx == index:                 # when match the Respective index, which intend to delete
+                prev_node.next = cur_node.next   # Biasing the pointer to next node            
+                cur_node = None                  # Assign the node's pointer to none, it can't be accessed
+                self.count -= 1
+                break
             cur_idx += 1
 
-the_list = LinkedList()
 
-the_list.display()
+# Create a linked list
+theList = LinkedList()
+theList.display()
 
-the_list.append(1)
-the_list.append(3)
-the_list.append(7)
-the_list.append(33)
+# Insert some items
+theList.insert(1)
+theList.insert(3)
+theList.insert(7)
+theList.insert(11)
+theList.insert(33)
 
-the_list.display()
-print("Element at 2nd index:", the_list.get(2))
+print("Item count:", theList.get_count())
+print("Finding item:", theList.find(7))
+theList.display()
 
-the_list.erase(1)
-the_list.display()
+theList.erase(2)
+print("Finding item:", theList.find(7))
+print("Item count:", theList.get_count())
+theList.display()
