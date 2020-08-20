@@ -12,8 +12,8 @@ print(counts)
 
 '''
 When "get()" is called it checks if the given key exists in the dict.
-- If it does exist, the value for that key is returned.
-- If it does not exist then the value of the default argument is returned instead
+- If it does exist, the value for that key is returned (e.g. name in counts dict.). 
+- If it does not exist then the value of the default argument is returned instead (e.g. 0 defaults in counts dict.)
 '''
 
 
