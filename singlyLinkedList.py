@@ -25,12 +25,12 @@ class LinkedList(object):
         return self.count
 
     def insert(self, data):
-        # TODO: Insert a new node
+        # TODO: Insert a new node & count
         new_node = Node(data)
-        cur = self.head
-        while cur.next != None:
-            cur = cur.next
-        cur.next = new_node
+        cur_node = self.head
+        while cur_node.next != None:
+            cur_node = cur_node.next
+        cur_node.next = new_node
         self.count += 1
 
     def display(self):
