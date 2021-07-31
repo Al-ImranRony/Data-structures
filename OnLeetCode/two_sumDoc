@@ -14,3 +14,4 @@
 *1st solution:*
 - Brute force approach
 - Time Complexity: O(n^2)
+- Space Complexity: 
