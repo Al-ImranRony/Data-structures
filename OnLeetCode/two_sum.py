@@ -3,10 +3,9 @@ Learning with Tecognize - HW of Lecture 1
 Leetcode problem - 01
 '''
 
-from tokenize import String
 
-def twoSum(nums, target) -> String:
-        start, end = 0, len(nums)-1
+def twoSum(nums, target) -> str:
+        end = len(nums)-1
         result = ''
         
         for i in range(end-1):
