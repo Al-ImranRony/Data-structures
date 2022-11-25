@@ -1,8 +1,8 @@
-# Couse - LeetCode 2101 
+# Course - LeetCode 2101 
 📁 Class-01
 
 *Topics :*
-- Array/List basics - defining, append and pop method
+- Array/List basics - define, append and pop methods
 - Complexity - Time & Space
 - List example problem - observe complexity
 - Find a target value in a list
@@ -14,4 +14,4 @@
 *1st solution:*
 - Brute force approach
 - Time Complexity: O(n^2)
-- Space Complexity: 
+- Space Complexity: O(1)
