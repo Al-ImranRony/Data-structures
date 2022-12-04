@@ -4,8 +4,9 @@ Set Matrix Zero in Python
 '''
 
 
-givenMatrix = [[1,1,0], [1,1,1], [0,1,1]]
-row = colum = (len(givenMatrix))
+givenMatrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
+row = len(givenMatrix)
+colum = len(givenMatrix[0])
 mi, mj, roz, coz = [-1]*row, [-1]*colum, [-1]*row, [-1]*colum
  
 for i in range(row):
