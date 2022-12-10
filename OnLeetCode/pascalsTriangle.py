@@ -1,6 +1,7 @@
 '''
 Tech Interview Prep Group task - Session 2.
 Pascal's Triangle in Python
+Time complexity: O(n2)
 '''
 
 
