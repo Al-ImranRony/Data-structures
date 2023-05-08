@@ -1,7 +1,7 @@
 '''
 Tech Interview Prep Group task - Session 3.
 Next Permutation in Python
-Time complexity: O()
+Time complexity: O(N-1)
 '''
 from itertools import permutations
 
